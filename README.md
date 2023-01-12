@@ -224,7 +224,7 @@ development:
   host: 'localhost:9200'
 ```
 
-The resulting config merges both hashes. Client options are passed as is to `Elasticsearch::Transport::Client` except for the `:prefix`, which is used internally by Chewy to create prefixed index names:
+The resulting config merges both hashes. Client options are passed as is to `Elastic::Transport::Client` except for the `:prefix`, which is used internally by Chewy to create prefixed index names:
 
 ```ruby
   Chewy.settings = {prefix: 'test'}

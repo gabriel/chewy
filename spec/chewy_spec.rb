@@ -59,7 +59,7 @@ describe Chewy do
       Chewy.current[:chewy_client] = nil
       allow(Chewy).to receive_messages(configuration: {transport_options: {proc: faraday_block}})
 
-      allow(::Elasticsearch::Client).to receive(:new).with(expected_client_config) do |*_args, &passed_block|
+      allow(Elasticsearch::Client).to receive(:new).with(expected_client_config) do |*_args, &passed_block|
         # RSpec's `with(..., &block)` was used previously, but doesn't actually do
         # any verification of the passed block (even of its presence).
         expect(passed_block.source_location).to eq(faraday_block.source_location)
@@ -108,7 +108,7 @@ describe Chewy do
       expect(CitiesIndex.exists?).to eq true
       expect(PlacesIndex.exists?).to eq true
 
-      expect { Chewy.create_indices! }.to raise_error(Elasticsearch::Transport::Transport::Errors::BadRequest)
+      expect { Chewy.create_indices! }.to raise_error(Elastic::Transport::Transport::Errors::BadRequest)
     end
   end
 end
