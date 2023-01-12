@@ -14,7 +14,6 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
 
   spec.files         = `git ls-files`.split($RS)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
   spec.add_development_dependency 'database_cleaner'
@@ -31,6 +30,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.add_development_dependency 'unparser'
 
   spec.add_dependency 'activesupport', '>= 5.2'
-  spec.add_dependency 'elasticsearch', '>= 7.12.0', '< 7.14.0'
+  spec.add_dependency 'elasticsearch', '>= 8.6.0'
   spec.add_dependency 'elasticsearch-dsl'
+  spec.metadata['rubygems_mfa_required'] = 'true'
 end
