@@ -1,11 +1,9 @@
-[![Gem Version](https://badge.fury.io/rb/chewy.svg)](http://badge.fury.io/rb/chewy)
-[![GitHub Actions](https://github.com/toptal/chewy/actions/workflows/ruby.yml/badge.svg)](https://github.com/toptal/chewy/actions/workflows/ruby.yml)
-[![Code Climate](https://codeclimate.com/github/toptal/chewy.svg)](https://codeclimate.com/github/toptal/chewy)
-[![Inline docs](http://inch-ci.org/github/toptal/chewy.svg?branch=master)](http://inch-ci.org/github/toptal/chewy)
 
 # Chewy
 
 Chewy is an ODM (Object Document Mapper), built on top of the [the official Elasticsearch client](https://github.com/elastic/elasticsearch-ruby).
+
+** This is a fork for compatibility with elasticsearch 8.x. **
 
 ## Why Chewy?
 
@@ -27,17 +25,15 @@ In this section we'll cover why you might want to use Chewy instead of the offic
 
 ## Installation
 
+To use this chewy fork...
+
 Add this line to your application's `Gemfile`:
 
-    gem 'chewy'
+    gem 'chewy', github: 'gabriel/chewy'
 
 And then execute:
 
     $ bundle
-
-Or install it yourself as:
-
-    $ gem install chewy
 
 ## Compatibility
 
@@ -51,6 +47,7 @@ Chewy is compatible with MRI 2.6-3.0¹.
 
 | Chewy version | Elasticsearch version              |
 | ------------- | ---------------------------------- |
+| This fork     | 8.x                                |
 | 7.2.x         | 7.x                                |
 | 7.1.x         | 7.x                                |
 | 7.0.x         | 6.8, 7.x                           |
